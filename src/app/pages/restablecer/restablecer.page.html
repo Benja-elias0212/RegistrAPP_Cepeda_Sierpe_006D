@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button
+    defaultHref="/">    
+    </ion-back-button>
+</ion-buttons>
+<ion-title>Restablecer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+
+    <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+    
+      <ion-list-header>
+        <ion-badge>Recuperar contraseña: {{formulario.valid}} </ion-badge>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-badge>Correo: </ion-badge>
+        <ion-input type="email" placeholder="Correo Duoc"
+                   name="email" value="" [(ngModel)]= "usuario.email"
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                   required>
+        </ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-badge>Password: </ion-badge>
+        <ion-input type="password"	 placeholder="Contraseña"
+                   name="password" value="" [(ngModel)]= "usuario.password"
+                   required>
+        </ion-input>
+      </ion-item>
+  
+      <ion-button routerLink="/home" (click)="mensajeSaludo()" expand="full" fill="outline" shape="round">
+        Ok 
+      
+      </ion-button>

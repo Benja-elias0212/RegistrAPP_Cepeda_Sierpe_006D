@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button
+    defaultHref="/">    
+    </ion-back-button>
+</ion-buttons>
+<ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+  
+    <ion-list-header color="warning">
+      <ion-label>Registro de usuario: {{formulario.valid}} </ion-label>
+    </ion-list-header>
+
+    <ion-item color="dark">
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" placeholder="Nombre"
+                 name="nombre" [(ngModel)]= "usuario.nombre" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label>Correo: </ion-label>
+      <ion-input type="email" placeholder="Correo Duoc"
+                 name="email" value="" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item color="dark">
+      <ion-label>Password: </ion-label>
+      <ion-input type="password"	 placeholder="Contraseña"
+                 name="password" value="" [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+      
+    </ion-item>
+    <ion-list>
+      <ion-item color="dark">
+        <ion-select placeholder="Tipo de usuario">
+          <ion-select-option value="docente">Docente</ion-select-option>
+          <ion-select-option value="alumno">Alumno</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-button color="primary"[disabled] ="formulario.invalid"
+            type="submit" routerLink="/home"  rexpand="block" >
+      Registrame
+    </ion-button>
+    
+
+ 
+
+  </form>
+
+
+</ion-content>

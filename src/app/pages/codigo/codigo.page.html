@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Codigo QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <p class="parrafo">
+      Si usted es usuario DOCENTE porfavor genere su codigo. 
+      </p> 
+  </ion-card-content>
+  <ion-item>
+    <ion-button class="qr" color="danger">
+    <ion-icon slot="end" name="qr-code-outline" class="generar"></ion-icon>
+    Generar codigo QR
+    </ion-button>
+  </ion-item>
+  <ion-card-content>
+    <p class="parrafo">
+      Si usted es usuario Alumno porfavor escanee su codigo. 
+      </p>
+      </ion-card-content>
+  <ion-item>
+    <ion-button class="qr" color="danger">
+    <ion-icon slot="end" name="qr-code-outline" class="generar"></ion-icon>
+    Escanear codigo QR
+    </ion-button>
+  </ion-item>
+
+
+  <ion-fab horizontal="start" vertical="bottom" slot="fixed">
+    <ion-fab-button color="secondary">
+      <ion-icon md="caret-forward" ios="chevron-forward-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button color="light">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      
+      <ion-fab-button color="light">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <img class="foto" src="assets/ass.jpg" alt="location">
+
+</ion-content>
