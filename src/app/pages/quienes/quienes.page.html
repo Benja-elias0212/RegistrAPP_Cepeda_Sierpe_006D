@@ -11,33 +11,21 @@
 
 <ion-content>
 
-
     <ion-card-header>
-      <ion-card-title>Quienes Somos</ion-card-title>
+      <ion-badge> <tr *ngFor="let us of usuarios; let i=index">
+        <td style="font-size: x-large"> Bienvenido/a {{us.nomUsuario}}!!!</td></tr></ion-badge>
     </ion-card-header>
   
     <ion-card-content>
-      <p class="parrafo">
-        Somos un grupo de alumnos de Duoc UC los cuales desarrollamos una aplicación. 
-        La cual optimiza el proceso de registro de asistencia. Tanto para el docente como el alumno.
-         El motivó de desarrollar esta APP fue debido a que.
-          En proceso de pandemia hubieron muchos factores que alteraban el proceso de registro de asistencia. 
-          En ocasiones, errores en el registro correctamente.
-      </p> 
+      <h2 class="parrafo">
+      
+        RegistrAPP le permitirá a usted o a su departamento de recursos humanos, registrar de forma fácil la asistencia de sus trabajadores o estudiantes.
+      </h2> 
+      <br>
       <img src="assets/quere.jpeg" alt="location">
-
-
-      <p class="parrafo"> Con el fin de terminar con esta problematica en forma definitiva.
-         Decidimos desarrollar esta APP para que el alumno registre su propia asistencia leyendo un codigo QR a traves de la camara de sus dispositivos moviles. El QR sera proyectado por el docente en cada aula. 
-         El codigo sera diferente cada dia. El alumno al leer el codigo QR proyectado. 
-         Se le tomara la asistencia de forma automatica y quedara registrado con el dia, 
-         fecha y hora.</p>
-
-         <img src="assets/profe.jpg" alt="location">
-         <img src="assets/Sala.jpg" alt="location">
+      <img src="assets/profe.jpg" alt="location">
     
-        
-    
+            
     </ion-card-content>
     <ion-fab horizontal="end" vertical="bottom" slot="fixed">
       <ion-fab-button color="light">

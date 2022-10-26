@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { RegistroserviceService } from '../../services/registroservice.service';
 
 @Component({
   selector: 'app-quienes',
@@ -8,10 +9,22 @@ import { MenuController } from '@ionic/angular';
 })
 export class QuienesPage implements OnInit {
 
-  constructor(private menuController: MenuController) {}
-  ngOnInit() 
-{}mostrarMenu
-()
-{this.menuController.open('first');}
+  usuarios: any[] = [];
+
+  constructor(private menuController: MenuController,
+  private registroService: RegistroserviceService ) {}
+
+  ngOnInit(){
+    this.registroService.getUsuarios().then(datos=>{
+      this.usuarios = datos;
+    })
+
+  }
+
+  mostrarMenu()
+  {this.menuController.open('first');
+
+  }
+  
 }
 

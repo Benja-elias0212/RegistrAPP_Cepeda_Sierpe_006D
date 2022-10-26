@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
     <ion-back-button
-    defaultHref="/">    
+    defaultHref="/home">    
     </ion-back-button>
 </ion-buttons>
 <ion-title>Inicio de sesion</ion-title>
@@ -11,48 +11,42 @@
 
 
 <ion-content>
-<div class="cuerpo">
-  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
-  
-    <ion-list-header color="warning">
-      <ion-label>Inicio de sesion: {{formulario.valid}} </ion-label>
-    </ion-list-header>
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
 
-    <ion-item color="primary">
-      <ion-label>Nombre: </ion-label>
-      <ion-input type="text" placeholder="Nombre"
-                 name="nombre" [(ngModel)]= "usuario.nombre" required>
-      </ion-input>
-    </ion-item>
+    <ion-card-content>
+        <form [formGroup]="formularioLogin">
 
-    <ion-item color="primary">
-      <ion-label>Correo: </ion-label>
-      <ion-input type="email" placeholder="Correo Duoc"
-                 name="email" value="" [(ngModel)]= "usuario.email"
+          <ion-item color="primary">
+            <ion-label>Correo: </ion-label>
+            <ion-input type="email" placeholder="Correo Duoc"
+                 formControlName="correo" value="" 
                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                 required>
-      </ion-input>
-    </ion-item>
+                 >
+            </ion-input>
+            </ion-item>
 
-    <ion-item color="primary">
-      <ion-label>Password: </ion-label>
-      <ion-input type="password"	 placeholder="Contraseña"
-                 name="password" value="" [(ngModel)]= "usuario.password"
-                 required>
-      </ion-input>
-    </ion-item>
+          <ion-item color="secondary">
+            <ion-label>Password: </ion-label>
+            <ion-input type="password"	 placeholder="Contraseña"
+                 formControlName="password" value="" 
+                 >
+            </ion-input>
+            </ion-item>
+        </form>
+  <br>
+  <ion-button (click)="Ingresar()" expand="block" fill="outline" shape="round">
+    Ingresar
+  </ion-button>
+    </ion-card-content>
+</ion-card>
 
-    <ion-button [disabled] ="formulario.invalid"
-            type="submit" color="warning" routerLink="/quienes" expand="block" >
-      Enviar
-    </ion-button>
     <center><ion-button  routerLink="/restablecer" fill="outline">Restablecer contraseña</ion-button></center>
     <p class="texto">¿No tienes cuenta?</p>
     <hr><center><ion-button  routerLink="/registro" class="" color="dark">Registrate</ion-button></center>
-    
-  </form>
   
-
-</div>
 </ion-content>
 

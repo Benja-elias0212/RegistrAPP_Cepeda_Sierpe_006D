@@ -37,6 +37,11 @@ export class AppComponent {
       name: 'Soporte',
       redirecTo:'/soporte',
     },
+    {
+      icon: 'calendar-number-outline',
+      name: 'Feriados',
+      redirecTo:'/feriados',
+    },
     
   ];
 

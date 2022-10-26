@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+
+    <ion-title>Feriados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content>
+    <table>
+      <tr>
+        <th>Nombre Feriado</th>
+        <th>Fecha</th>
+        <th>Tipo</th>
+      </tr>
+    <tr *ngFor="let fer of feriados; let i=index">
+      <td class="Texto">{{fer.nombre}}</td>
+      <td class="Texto"> {{fer.fecha}}</td>
+      <td class="Texto">{{fer.tipo}}</td>
+    </tr>
+    </table>
+  
+  </ion-content>

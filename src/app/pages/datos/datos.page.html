@@ -14,29 +14,30 @@
   <center><img src="assets/user.png" alt="location" class="user"></center>
 <ion-card-content>
   
-  <br><br>
+  
   <ion-list>
     <ion-item>
+      <tr *ngFor="let us of usuarios; let i=index">
       <ion-badge slot="start">Nombre:</ion-badge>
-      <ion-label>Jose Perez</ion-label>
+      <ion-label>{{us.nomUsuario}}</ion-label></tr>
     </ion-item>
+    <br>
     <ion-item>
+      <tr *ngFor="let us of usuarios; let i=index">
       <ion-badge slot="start">Email:</ion-badge>
-      <ion-label>Jose@duocuc.cl</ion-label>
+      <ion-label>{{us.correoUsuario}}</ion-label></tr>
     </ion-item>
+    <br>
     <ion-item>
-      <ion-badge slot="start">Contraseña:</ion-badge>
-      <ion-label>*******</ion-label>
-    </ion-item>
-    <ion-item>
+      <tr *ngFor="let us of usuarios; let i=index">
       <ion-badge slot="start">Tipo de Usuario:</ion-badge>
-      <ion-label>Docente</ion-label>
+      <ion-label>{{us.tipoUsuario}}</ion-label></tr>
     </ion-item>
   </ion-list>
 
   <br>
 </ion-card-content>
-<center><ion-button (click)="mensajeSaludo()" color="danger" routerLink="/home"  class="boton">
+<center><ion-button (click)="cerrarSesion()" color="danger"  class="boton">
   Cerrar Sesión
 </ion-button></center>
 
